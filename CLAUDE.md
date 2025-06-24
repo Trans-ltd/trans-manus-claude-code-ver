@@ -75,7 +75,9 @@ AI-powered reporting agent that analyzes BigQuery semantic dataset (growth-force
 - Always use bq commands for dynamic schema retrieval
 - Prefer editing existing files over creating new ones
 - Commit and push when features are completed
+- Split commits by meaningful units (feature, docs, etc.)
 - Run appropriate lint/typecheck commands after code changes
 - Maintain product backlog in docs/product-backlog.md
 - Keep architecture documentation updated in docs/architecture.md
 - Any user requirements that affect future decisions must be added to CLAUDE.md
+- Use experimental token auth with caution - API key is recommended

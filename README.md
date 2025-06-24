@@ -2,53 +2,65 @@
 
 AI-powered reporting agent for BigQuery semantic dataset analysis using Claude Code SDK.
 
-## Project Structure
+## 🚀 Features
 
-```
-.
-├── backend/        # Python FastAPI backend
-├── frontend/       # Next.js frontend
-├── docs/          # Project documentation
-└── README.md
-```
+- **Natural Language Queries**: Ask questions in Japanese about your BigQuery data
+- **Automated Report Generation**: Creates interactive charts and summaries
+- **Real-time Analysis**: Powered by Claude Code SDK with BigQuery integration
+- **Secure Authentication**: Google SSO with domain restrictions
+- **Interactive Visualizations**: Built with Recharts for EC-focused analytics
 
-## Features
-
-- Natural language query interface
-- BigQuery data analysis via Claude Code
-- Interactive chart generation with Recharts
-- Follow-up question capability
-- Google Workspace SSO authentication
-
-## Tech Stack
-
-- **Frontend**: Next.js 14, TypeScript, Tailwind CSS, Recharts
-- **Backend**: Python, FastAPI, Claude Code SDK
-- **Database**: Google BigQuery (growth-force-project:semantic)
-- **Infrastructure**: Vercel, Google Cloud Run
-
-## Getting Started
-
-### Prerequisites
+## 📋 Prerequisites
 
 - Node.js 18+
 - Python 3.11+
-- Google Cloud SDK
-- BigQuery access to growth-force-project
+- Google Cloud SDK (`gcloud`)
+- Redis (for session management)
+- Access to `growth-force-project` BigQuery dataset
 
-### Backend Setup
+## 🛠️ Tech Stack
+
+### Frontend
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS + shadcn/ui
+- Recharts for data visualization
+- NextAuth.js for authentication
+
+### Backend
+- FastAPI (Python)
+- uv package manager
+- Claude Code SDK
+- Google BigQuery SDK
+- Redis for sessions
+
+## 📖 Documentation
+
+- [Setup Guide](./docs/setup-guide.md) - Detailed setup instructions
+- [Architecture](./docs/architecture.md) - System design and components
+- [Product Backlog](./docs/product-backlog.md) - Development progress tracking
+- [Claude Subscription Hack](./docs/claude-subscription-hack.md) - Experimental auth method
+
+## 🚦 Quick Start
+
+### 1. Clone and Install
+
+```bash
+git clone https://github.com/Trans-ltd/trans-manus-claude-code-ver.git
+cd trans-manus-claude-code-ver
+```
+
+### 2. Backend Setup
 
 ```bash
 cd backend
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
+uv sync
 cp .env.example .env
 # Edit .env with your credentials
-uvicorn main:app --reload
+uv run uvicorn src.main:app --reload
 ```
 
-### Frontend Setup
+### 3. Frontend Setup
 
 ```bash
 cd frontend
@@ -58,11 +70,88 @@ cp .env.local.example .env.local
 npm run dev
 ```
 
-## Development
+### 4. Access the Application
 
-See [CLAUDE.md](./CLAUDE.md) for development guidelines and conventions.
+Open http://localhost:3000 in your browser.
 
-## Documentation
+## 🔑 Environment Variables
 
-- [Technical Specification](./growth-force-reporting-agent-spec.md)
-- [MVP Detailed Specification](./growth-force-mvp-detailed-spec.md)
+See [Setup Guide](./docs/setup-guide.md) for detailed environment variable configuration.
+
+### Required Keys
+- Claude API Key (or subscription tokens)
+- Google OAuth credentials
+- BigQuery service account
+- Redis connection
+
+## 📊 Usage Example
+
+1. Login with your Growth Force Google account
+2. Navigate to the chat interface
+3. Ask questions like:
+   - "今月のMeta広告のパフォーマンスを見せて"
+   - "売上が最も高い商品TOP10は？"
+   - "先月と今月のROASを比較して"
+
+## 🏗️ Project Structure
+
+```
+.
+├── backend/          # FastAPI backend
+│   ├── src/
+│   │   ├── api/     # API endpoints
+│   │   ├── services/# Business logic
+│   │   └── ...
+│   └── ...
+├── frontend/         # Next.js frontend
+│   ├── src/
+│   │   ├── app/     # App Router pages
+│   │   ├── components/
+│   │   └── ...
+│   └── ...
+├── docs/            # Documentation
+└── README.md
+```
+
+## 🧪 Development Status
+
+### ✅ Completed (MVP)
+- Project setup with modern tooling
+- Google SSO authentication
+- Claude Code SDK integration
+- BigQuery connection
+- Chat interface
+- Report visualization components
+- Experimental token authentication
+
+### 🔄 In Progress
+- End-to-end testing
+- Performance optimization
+- Error handling improvements
+
+### 📅 Planned
+- Session persistence
+- Report templates
+- Export functionality
+- Multi-tenant support
+
+## 🤝 Contributing
+
+This is an internal Growth Force project. Please contact the engineering team for contribution guidelines.
+
+## ⚠️ Security Notes
+
+- Never commit `.env` files
+- Use read-only BigQuery service accounts
+- Restrict OAuth to company domain
+- See [Security Best Practices](./docs/architecture.md#セキュリティ) for details
+
+## 📝 License
+
+Internal use only. Copyright © 2024 Growth Force / Trans Ltd.
+
+## 🆘 Support
+
+- Internal Slack: #tech-support
+- Email: engineering@growth-force.co.jp
+- GitHub Issues: [Create an issue](https://github.com/Trans-ltd/trans-manus-claude-code-ver/issues)
