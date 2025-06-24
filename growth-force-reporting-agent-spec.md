@@ -68,6 +68,7 @@ BigQueryのsemanticデータセットを分析し、自然言語による質問�
 
 ### バックエンド
 - **Python + FastAPI** - 高速APIフレームワーク
+- **uv** - 高速なPythonパッケージ・インストーラー
 - **Claude Code SDK (Python版)** - AIエージェント統合
 - **Google Cloud BigQuery SDK** - データベース連携
 - **Pydantic** - データバリデーション

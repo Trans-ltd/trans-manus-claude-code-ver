@@ -11,6 +11,7 @@ AI-powered reporting agent that analyzes BigQuery semantic dataset (growth-force
 ### Architecture
 - **Frontend**: Next.js 14 (App Router) with TypeScript
 - **Backend**: Python + FastAPI
+- **Python Package Manager**: uv (fast Python package installer)
 - **Chart Library**: Recharts (selected for EC-specific features)
 - **Authentication**: Google Workspace SSO
 - **Infrastructure**: Vercel (frontend) + Google Cloud Run (backend)
