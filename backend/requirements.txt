@@ -1,0 +1,31 @@
+# Core dependencies
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+python-dotenv>=1.0.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# Google Cloud
+google-cloud-bigquery>=3.14.0
+google-auth>=2.26.0
+
+# Redis
+redis>=5.0.0
+
+# HTTP client
+httpx>=0.26.0
+
+# File upload
+python-multipart>=0.0.6
+
+# Claude Code SDK
+claude-code-sdk>=0.1.0
+anyio>=4.0.0
+
+# Development dependencies (optional)
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+black>=23.0.0
+ruff>=0.1.0
+mypy>=1.8.0

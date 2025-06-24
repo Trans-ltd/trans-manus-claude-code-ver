@@ -48,6 +48,11 @@ setup_security_headers(app)
 # Include routers
 app.include_router(reports.router, prefix="/api/reports", tags=["reports"])
 
+# Add BigQuery router for testing (remove in production)
+if settings.environment == "development":
+    from src.api import bigquery
+    app.include_router(bigquery.router, prefix="/api/bigquery", tags=["bigquery"])
+
 
 @app.get("/")
 async def root():
