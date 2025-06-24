@@ -193,4 +193,15 @@ CORS_ORIGINS
 3. **ストリーミング応答**: 長時間処理のプログレス表示
 4. **マルチテナント対応**: クライアント別のデータ分離
 
+## 認証方式
+
+### 標準的な認証（推奨）
+- Claude API Key: `CLAUDE_API_KEY`環境変数
+- 公式APIコンソールから取得
+
+### サブスクリプション版トークン認証（実験的）
+- `/api/auth/set-tokens`エンドポイントでトークンを設定
+- access_token, refresh_token, expires_atを使用
+- 詳細は[claude-subscription-hack.md](./claude-subscription-hack.md)参照
+
 最終更新: 2024-06-24
