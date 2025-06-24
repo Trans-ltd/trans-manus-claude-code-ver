@@ -40,11 +40,12 @@ AI-powered reporting agent that analyzes BigQuery semantic dataset (growth-force
 - **Documentation**: Only create documentation files when explicitly requested
 - **Error handling**: Provide Japanese user-facing error messages
 - **Testing**: Run lint and typecheck commands before marking tasks complete
+- **Git commits**: Commit and push automatically when a feature is completed
 
 ### Communication Style
 - **Language**: Respond in Japanese when user writes in Japanese
 - **Conciseness**: Keep responses brief and to the point
-- **Proactivity**: Be proactive with planning but not with commits
+- **Proactivity**: Be proactive with planning and implementation
 
 ## Project-Specific Requirements
 
@@ -72,5 +73,5 @@ AI-powered reporting agent that analyzes BigQuery semantic dataset (growth-force
 ## Important Notes
 - Always use bq commands for dynamic schema retrieval
 - Prefer editing existing files over creating new ones
-- Only commit when explicitly asked by the user
+- Commit and push when features are completed
 - Run appropriate lint/typecheck commands after code changes
