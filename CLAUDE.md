@@ -76,3 +76,6 @@ AI-powered reporting agent that analyzes BigQuery semantic dataset (growth-force
 - Prefer editing existing files over creating new ones
 - Commit and push when features are completed
 - Run appropriate lint/typecheck commands after code changes
+- Maintain product backlog in docs/product-backlog.md
+- Keep architecture documentation updated in docs/architecture.md
+- Any user requirements that affect future decisions must be added to CLAUDE.md
