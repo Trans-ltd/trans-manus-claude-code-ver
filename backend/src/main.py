@@ -53,6 +53,10 @@ if settings.environment == "development":
     from src.api import bigquery
     app.include_router(bigquery.router, prefix="/api/bigquery", tags=["bigquery"])
 
+# Add auth router for token management
+from src.api import auth
+app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
+
 
 @app.get("/")
 async def root():
