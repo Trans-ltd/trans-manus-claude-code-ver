@@ -2,13 +2,15 @@
 
 import json
 import logging
-from typing import Any, Dict, List
+import os
+from typing import Any, Dict, List, Optional
 
 import anyio
 from claude_code_sdk import ClaudeCodeOptions, Message, query
 
 from src.config import settings
 from src.prompts import SYSTEM_PROMPT
+from src.services.claude_auth_service import ClaudeAuthService
 
 logger = logging.getLogger(__name__)
 
@@ -18,11 +20,23 @@ class ClaudeService:
 
     def __init__(self):
         """Initialize Claude service."""
+        self.auth_service = ClaudeAuthService()
         self.options = ClaudeCodeOptions(
             system_prompt=SYSTEM_PROMPT,
             max_turns=1,  # Single turn for report generation
             allowed_tools=["bash"],  # Only allow bash for bq commands
             permission_mode="auto",
+        )
+        
+    async def set_auth_tokens(
+        self, 
+        access_token: str, 
+        refresh_token: str, 
+        expires_at: int
+    ) -> bool:
+        """Set authentication tokens for Claude Code."""
+        return await self.auth_service.authenticate_with_tokens(
+            access_token, refresh_token, expires_at
         )
 
     async def analyze_query(
